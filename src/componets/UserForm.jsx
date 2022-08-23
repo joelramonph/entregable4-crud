@@ -10,7 +10,7 @@ const defaultValue = {
   password: '',
   birthday: ''
 }
-const UserForm = ({getAllUsers, updateInfo, setUpdateInfo}) => {
+const UserForm = ({getAllUsers, updateInfo, setUpdateInfo, handleCloseForm}) => {
 
   useEffect(() => {
     if (updateInfo) {
@@ -58,12 +58,15 @@ const UserForm = ({getAllUsers, updateInfo, setUpdateInfo}) => {
       
     }
     reset(defaultValue)
+    handleCloseForm()
     
   }
 
   return (
     <div className='container'>
+
     <form onSubmit={handleSubmit(submit)} className='form'>
+      <div onClick={handleCloseForm} className='form__equis'>X</div>
       <h1>{updateInfo ? 'Update User Information' : 'Create New User'}</h1>
       <ul className='form__list'>
         <li className='form__item'>
@@ -85,7 +88,7 @@ const UserForm = ({getAllUsers, updateInfo, setUpdateInfo}) => {
         </li>
       </ul>
     
-        <button>{updateInfo ? 'Update' : 'Create'}</button>
+        <button className='form__btn'>{updateInfo ? 'Update' : 'Create'}</button>
         
     </form>
 

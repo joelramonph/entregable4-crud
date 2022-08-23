@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 
-const UsersList = ({user, getAllUsers, setUpdateInfo}) => {
+const UsersList = ({user, getAllUsers, setUpdateInfo, handleOpenForm}) => {
 
   const deleteUser = () => {
     const URL = `https://users-crud1.herokuapp.com/users/${user.id}/`
@@ -16,6 +16,7 @@ const UsersList = ({user, getAllUsers, setUpdateInfo}) => {
 
   const handleUpdateClick = () =>{
     setUpdateInfo(user)
+    handleOpenForm()
   }
     
   return (

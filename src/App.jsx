@@ -8,8 +8,8 @@ import UserForm from './componets/UserForm'
 function App() {
  
 const [users, setUsers] = useState()
-
 const [updateInfo,setUpdateInfo] = useState()
+const [isFormOpen,setIsFormOpen] = useState(false)
 
   const getAllUsers = () => {
     const URL = 'https://users-crud1.herokuapp.com/users/'
@@ -24,16 +24,25 @@ const [updateInfo,setUpdateInfo] = useState()
   }, [])
   
   
+const handleOpenForm = () => setIsFormOpen(true)
 
+const handleCloseForm = () => setIsFormOpen(false)
 
   return (
     <div className="App">
       <h1>Entregable4</h1>
+      <button onClick={handleOpenForm}>Open Form</button>
+
+      <div className={isFormOpen ? 'form__container' : 'form-none' }>
+
       <UserForm 
         getAllUsers={getAllUsers}
         updateInfo={updateInfo}
         setUpdateInfo={setUpdateInfo}
+        handleCloseForm={handleCloseForm}
       />
+
+      </div>
       <div className="card__container">
 
       {
@@ -43,6 +52,7 @@ const [updateInfo,setUpdateInfo] = useState()
             user={user}
             getAllUsers={getAllUsers}
             setUpdateInfo={setUpdateInfo}
+            handleOpenForm={handleOpenForm}
           />
 
         ))
