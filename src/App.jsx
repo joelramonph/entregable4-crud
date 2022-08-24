@@ -30,10 +30,15 @@ const handleCloseForm = () => setIsFormOpen(false)
 
   return (
     <div className="App">
-      <h1>Entregable4</h1>
-      <button onClick={handleOpenForm}>Open Form</button>
 
-      <div className={isFormOpen ? 'form__container' : 'form-none' }>
+     <header className='header__container'>
+
+      <h1 className='header__title'> Users </h1>
+      <button className='header__btn' onClick={handleOpenForm}>  Create New User </button>
+
+     </header>
+
+      <div className={ isFormOpen ? 'form__container' : 'form-none' }>
 
       <UserForm 
         getAllUsers={getAllUsers}

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 
+
 const UsersList = ({user, getAllUsers, setUpdateInfo, handleOpenForm}) => {
 
   const deleteUser = () => {
@@ -25,13 +26,15 @@ const UsersList = ({user, getAllUsers, setUpdateInfo, handleOpenForm}) => {
    <hr className='card__hr' />
 
    <ul className='card__list'>
-   <li className="card__item">Correo <span className='card__span'>{user.email}</span></li>
-   <li className="card__item">Cumleapños <span className='card__span'>{user.birthday}</span></li>
+   <li className="card__item">Email <span className='card__span'>{user.email}</span></li>
+   <li className="card__item">Birthday <span className='card__span'>{user.birthday}</span></li>
    </ul>
 
+   <hr className='card__hr' />
+
    <div className='container__btn'>
-    <button onClick={deleteUser} className='card__btn delete'>Eliminar</button>
-    <button onClick={handleUpdateClick}  className='card__btn update'>Editar</button>
+    <button onClick={deleteUser} className='card__btn delete'>Delete</button>
+    <button onClick={handleUpdateClick}  className='card__btn update'>Update</button>
 
    </div>
 

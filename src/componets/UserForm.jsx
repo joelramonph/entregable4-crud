@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form'
 import { useEffect } from 'react'
 import axios from 'axios'
 
+
+
 const defaultValue = {
   first_name: '',
   last_name: '',
@@ -71,20 +73,20 @@ const UserForm = ({getAllUsers, updateInfo, setUpdateInfo, handleCloseForm}) => 
       <ul className='form__list'>
         <li className='form__item'>
           <label htmlFor="name last">Name</label>
-          <input {...register("first_name")} type="text" id='name' />
-          <input {...register("last_name")}  type="text" id='last' />
+          <input {...register("first_name")} type="text" id='name'  />
+          <input {...register("last_name")}  type="text" id='last'  />
         </li>
         <li className='form__item'>
           <label htmlFor="email">Email</label>
-          <input {...register("email")}  type="mail" id='email' />
+          <input className='input-email' {...register("email")}  type="mail" id='email'  />
         </li>
         <li className='form__item'>
           <label htmlFor="password">Password</label>
-          <input {...register("password")} type="password" id='password'/>
+          <input  {...register("password")} type="password" id='password'/>
         </li>
         <li className='form__item'>
-          <label htmlFor="birthday">Cumple</label>
-          <input  {...register("birthday")} type="date" id='birthday'/>
+          <label htmlFor="birthday">Birthday</label>
+           <input className='form__input'  {...register("birthday")} type="date" id='birthday'/>
         </li>
       </ul>
     
