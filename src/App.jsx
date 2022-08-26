@@ -34,7 +34,7 @@ const handleCloseForm = () => setIsFormOpen(false)
      <header className='header__container'>
 
       <h1 className='header__title'> Users </h1>
-      <button className='header__btn' onClick={handleOpenForm}>  Create New User </button>
+      <button className='header__btn' onClick={handleOpenForm}> <ion-icon name="add-outline"></ion-icon>  Create New User </button>
 
      </header>
 

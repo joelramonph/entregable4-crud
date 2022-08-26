@@ -69,24 +69,24 @@ const UserForm = ({getAllUsers, updateInfo, setUpdateInfo, handleCloseForm}) => 
 
     <form onSubmit={handleSubmit(submit)} className='form'>
       <div onClick={handleCloseForm} className='form__equis'>X</div>
-      <h1>{updateInfo ? 'Update User Information' : 'Create New User'}</h1>
+      <h1 className='form__title'>{updateInfo ? 'Update User Information' : 'Create New User'}</h1>
       <ul className='form__list'>
         <li className='form__item'>
-          <label htmlFor="name last">Name</label>
-          <input {...register("first_name")} type="text" id='name'  />
-          <input {...register("last_name")}  type="text" id='last'  />
+          <label htmlFor="name">Full Name</label>
+          <input className='form__input firts' {...register("first_name")} type="text" placeholder="First Name" required  />
+          <input className='form__input last' {...register("last_name")}  type="text" placeholder="Last Name" required  />
         </li>
         <li className='form__item'>
           <label htmlFor="email">Email</label>
-          <input className='input-email' {...register("email")}  type="mail" id='email'  />
+          <input className='form__input email-main'  {...register("email")}  type="mail"  placeholder="Email" required />
         </li>
-        <li className='form__item'>
+        <li className='form__item '>
           <label htmlFor="password">Password</label>
-          <input  {...register("password")} type="password" id='password'/>
+          <input className='form__input password-current' {...register("password")} type="password" placeholder="password" required />
         </li>
         <li className='form__item'>
           <label htmlFor="birthday">Birthday</label>
-           <input className='form__input'  {...register("birthday")} type="date" id='birthday'/>
+           <input className='form__input birthday-born' {...register("birthday")} type="date"  />
         </li>
       </ul>
     

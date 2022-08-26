@@ -20,6 +20,7 @@ h1,h2,h3,hr{
 }
 
 .header__container{
+   
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,21 +31,32 @@ h1,h2,h3,hr{
 }
 
 .header__btn{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
     width: max-content;
     padding: 8px 12px;
     margin-top: 10px;
-    background-color: darkmagenta;
+    background-color: #16003B;
     color: white;
     border: none;
 
 }
 
+ion-icon{
+    font-size: 1.5rem;
+}
+
 /*card__container*/
 
+
+
 .card__container{
+    max-width: 1024px;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -113,4 +125,19 @@ h1,h2,h3,hr{
 .update{
     background-color: gainsboro;
     color: brown;
+}
+
+
+@media (min-width:600px) {
+    
+    .header__container{
+        
+        flex-direction: row;
+        justify-content: space-around;
+        
+    }
+    .header__btn{
+        padding: 8px 12px 8px 30px ;
+    }
+    
 }
